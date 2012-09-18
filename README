@@ -1,4 +1,30 @@
-Dies ist der OpenWRT dmx feed von Markus Baier
-In diesem feed sind alle Pakete zusammengefasst
-welche dmx Anwendungen fuer OpenWRT zur Verfuegung
-stellen.
+OpenWrt - dmx feed
+========================
+
+This feed for OpenWRT provides Packages
+to install several DMX Programs within OpenWRT 
+
+How to use this Repository with OpenWRT
+1. Install the OpenWRT Buildsystem
+   cd /usr/src
+   mkdir openwrt
+   chown <User>:root openwrt
+   cd openwrt
+   su <User>
+   svn checkout svn://svn.openwrt.org/openwrt/trunk/ .
+
+2. Add this Repository to the OpenWRT feeds
+   <Create> feeds.conf
+   Open feeds.conf and add at least the following
+   two lines:
+   src-svn packages svn://svn.openwrt.org/openwrt/packages
+   src-git dmx git://github.com/frost-fra/dmx.git
+
+3. Update the feed Index
+   ./scripts/feeds update -a (Updates the index for all feeds)
+   or
+   ./scripts/feeds update dmx (Update the index for the dmx feed)
+
+4. Now you should be able to find and install the packages
+   ./scripts/feeds search dmx
+   ./scripts/feeds install dmx_usb_module
