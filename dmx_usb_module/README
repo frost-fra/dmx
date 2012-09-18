@@ -1,0 +1,19 @@
+OpenWrt - dmx_usb_module
+========================
+
+With this Package you can install Erwin Rols
+OpenDMX USB driver in OpenWRT
+
+How to use this Package
+1. Install the Package in the OpenWRT Buildsystem
+   Change to the root directory of the Buildsystem.
+   e.g. cd /usr/src/openwrt/
+2. Add the Package to the Buildsystem
+   ./scripts/feeds install dmx_usb_module
+3. Chose the module within the OpenWRT Config-System
+   make menuconfig
+   + Kernel modules -> USB Support -> kmod-dmx_usb_module
+4. Compile a new OpenWRT System
+   make
+   or only the new module
+   make package/dmx_usb_module/compile V=99

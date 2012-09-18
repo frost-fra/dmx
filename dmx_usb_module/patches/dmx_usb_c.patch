@@ -1,0 +1,25 @@
+--- a/dmx_usb.c	2012-09-10 17:56:02.199656696 +0200
++++ b/dmx_usb.c	2012-09-10 17:57:35.739640277 +0200
+@@ -630,12 +630,20 @@
+ 	int i;
+ 	int retval = -ENOMEM;
+ 
++	info ("Neues Geraet am Bus gefunden, dafuer koennte ich zustaendig sein");
+ 	/* See if the device offered us matches what we can accept */
+-	if ((udev->descriptor.idVendor != FTDI_VID) ||
+-	    (udev->descriptor.idProduct != FTDI_8U232AM_PID)) {
++	
++	info ("usb_var1 lautet nun %d", udev->devnum);
++	info ("usb_var2 lautet %s", udev->product);
++	info ("idVendor = 0x%x", le16_to_cpu(udev->descriptor.idVendor));
++	info ("idProduct = 0x%x", le16_to_cpu(udev->descriptor.idProduct));
++	if ((le16_to_cpu(udev->descriptor.idVendor) != FTDI_VID) ||
++	    (le16_to_cpu(udev->descriptor.idProduct) != FTDI_8U232AM_PID)) {
++		err ("Das ich jetzt hier gelandet bin ist nicht gut!");
+ 		return -ENODEV;
+ 	}
+ 
++	info ("Ja, kenne das USB Geraet, starte die Initialisierung");
+ 	/* allocate memory for our device state and initialize it */
+ 	dev = kmalloc (sizeof(struct dmx_usb_device), GFP_KERNEL);
+ 	if (dev == NULL) {
