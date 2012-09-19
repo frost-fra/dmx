@@ -10,8 +10,8 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=dmx_usb_module
-PKG_VERSION:=0.3
-PKG_REV:=ccdba04d77050ed211ee704857d703adc9735530
+PKG_VERSION:=0.4
+PKG_REV:=74a4067667b4d009d33ce7f52045786735b0a137
 PKG_SOURCE_URL:=git://github.com/lowlander/dmx_usb_module.git
 PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
@@ -22,7 +22,7 @@ include $(INCLUDE_DIR)/package.mk
 
 define KernelPackage/dmx_usb_module
 	SUBMENU:=USB Support
-	TITLE:=DMX USB Module fuer FTDI RS485 Chipsatz
+	TITLE:=DMX USB Module for the FTDI RS485 USB chip
 	FILES:=$(PKG_BUILD_DIR)/dmx_usb.$(LINUX_KMOD_SUFFIX)
 	AUTOLOAD:=$(call AutoLoad,65,dmx_usb)	
 	KCONFIG:=
@@ -30,7 +30,7 @@ endef
 
 define KernelPackage/dmx_usb_module/description
 	Modul to communicate with a DMX Dongle
-	based on the FTDI RS485 chipset.
+	based on the FTDI RS485 USB chip.
 endef
 
 EXTRA_KCONFIG:= \
