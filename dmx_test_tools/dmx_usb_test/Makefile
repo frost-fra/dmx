@@ -26,6 +26,7 @@ define Package/dmx_usb_test
 	CATEGORY:=Utilities
 	SUBMENU:=DMX Programs
 	TITLE:=DMX Testprogram -- Uses the DMX USB-Driver
+	DEPENDS:=+dmx_usb_module
 endef
 
 define Package/dmx_usb_test/description
