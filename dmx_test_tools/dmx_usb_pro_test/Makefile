@@ -1,11 +1,11 @@
 ##############################################
-# OpenWrt Makefile for the dmx_usb_test program
+# OpenWrt Makefile for the dmx_usb_pro_test program
 ##############################################
 
 include $(TOPDIR)/rules.mk
 
 # Name and release number of this package
-PKG_NAME:=dmx_usb_test
+PKG_NAME:=dmx_usb_pro_test
 PKG_RELEASE:=1
 
 
@@ -21,19 +21,18 @@ include $(INCLUDE_DIR)/package.mk
 
 # Specify package information for this program. 
 # The variables defined here should be self explanatory.
-define Package/dmx_usb_test
+define Package/dmx_usb_pro_test
 	SECTION:=utils
 	CATEGORY:=Utilities
 	SUBMENU:=DMX Programs
-	TITLE:=DMX Testprogram -- Uses the DMX USB-Driver
+	TITLE:=DMX Testprogram for the Enttec USBPRO DMX Interface
 	DEPENDS:=+kmod-dmx_usb_module
 endef
 
 define Package/dmx_usb_test/description
-This is a little testprogram for the DMX USB-Dongles
-based on the FTDI 232BM like the Open DMX USB who will
-be controlled by the USB-DMX driver.
-The Programm uses the /dev/dmx0 Interface
+This is a little testprogram for the Enttec DMX USBPRO
+USB to DMX Interface.
+The Programm uses the /dev/ttyUSB0 serial Port
 endef
 
 
@@ -63,7 +62,7 @@ endef
 # (in our case the build directory) to the install directory.
 define Package/dmx_usb_test/install
 	$(INSTALL_DIR) $(1)/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dmx_usb_test $(1)/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dmx_usb_pro_test $(1)/bin/
 endef
 
 
@@ -71,4 +70,4 @@ endef
 # The above define directives specify all the information needed,
 # but this line calls BuildPackage which in turn actually uses
 # this information to build a package.
-$(eval $(call BuildPackage,dmx_usb_test))
+$(eval $(call BuildPackage,dmx_usb_pro_test))
