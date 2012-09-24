@@ -60,7 +60,7 @@ endef
 # directory if it does not already exist.  Likewise $(INSTALL_BIN) contains
 # the command to copy the binary file from its current location
 # (in our case the build directory) to the install directory.
-define Package/dmx_usb_test/install
+define Package/dmx_usb_pro_test/install
 	$(INSTALL_DIR) $(1)/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dmx_usb_pro_test $(1)/bin/
 endef
