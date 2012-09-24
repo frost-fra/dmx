@@ -26,7 +26,7 @@ define Package/dmx_usb_pro_test
 	CATEGORY:=Utilities
 	SUBMENU:=DMX Programs
 	TITLE:=DMX Testprogram for the Enttec USBPRO DMX Interface
-	DEPENDS:=+kmod-dmx_usb_module
+	DEPENDS:=+kmod-usb-serial-ftdi
 endef
 
 define Package/dmx_usb_test/description
