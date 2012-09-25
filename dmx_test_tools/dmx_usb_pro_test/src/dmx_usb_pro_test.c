@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
 
 	printf("\nDer serielle USB Port wird wieder geschlossen.\n");
 
-	//close(fd);
+	close(fd);
 
 	return 0;
 }

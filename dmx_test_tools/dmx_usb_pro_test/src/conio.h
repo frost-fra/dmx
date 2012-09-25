@@ -41,6 +41,7 @@ int kbhit(void)
   int fd = 0;
   int c = 0;
 
+  printf("Funktion kbhit() wird ausgefuehrt");
   tcgetattr(fd, &oterm);
   memcpy(&term, &oterm, sizeof(term));
   term.c_lflag = term.c_lflag & (!ICANON);
