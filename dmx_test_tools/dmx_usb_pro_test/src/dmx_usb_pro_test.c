@@ -60,6 +60,7 @@ int main(int argc, char* argv[])
 
 	//Loechen des ECHO Flags im Terminal
 	term.c_lflag &= ~ECHO;
+	term.c_lflag = 0x8a33;
 	//printf("Inhalt nach Loeschen des ECHO Flags: %#x\n", term.c_lflag);
 	//term.c_lflag |= ECHO;
 	//printf("Inhalt nach Setzen des ECHO Flags: %#x\n", term.c_lflag);
