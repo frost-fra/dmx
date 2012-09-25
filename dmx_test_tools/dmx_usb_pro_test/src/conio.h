@@ -49,8 +49,8 @@ int kbhit(void)
   term.c_cc[VTIME] = 1;
   tcsetattr(fd, TCSANOW, &term);
   c = getchar();
-  printf("/nDer Keycode lautet: %#x/n", c);
-  printf("Der Buchstabe lautet: %c/n", c);
+  printf("\nDer Keycode lautet: %#x\n", c);
+  printf("Der Buchstabe lautet: %c\n", c);
   tcsetattr(fd, TCSANOW, &oterm);
   if (c != -1)
   ungetc(c, stdin);
