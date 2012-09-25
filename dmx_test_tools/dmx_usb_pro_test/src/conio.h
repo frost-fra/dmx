@@ -46,7 +46,7 @@ int kbhit(void)
   memcpy(&term, &oterm, sizeof(term));
   term.c_lflag = term.c_lflag & (!ICANON);
   term.c_cc[VMIN] = 0;
-  term.c_cc[VTIME] = 1;
+  term.c_cc[VTIME] = 10;
   tcsetattr(fd, TCSANOW, &term);
   c = getchar();
   printf("\nDer Keycode lautet: %#x\n", c);

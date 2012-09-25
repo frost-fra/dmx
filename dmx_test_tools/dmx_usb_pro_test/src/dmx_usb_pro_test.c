@@ -66,8 +66,6 @@ int main(int argc, char* argv[])
 	//printf("Inhalt nach Setzen des ECHO Flags: %#x\n", term.c_lflag);
 	tcsetattr(pd, TCSANOW, &term);
 
-	c = getchar();
-	printf("Eingabe: %c\n", c);
 	while(!kbhit())
 	{
 
