@@ -45,8 +45,10 @@ int kbhit(void)
   tcgetattr(fd, &oterm);
   memcpy(&term, &oterm, sizeof(term));
   term.c_lflag = term.c_lflag & (!ICANON);
-  term.c_cc[VMIN] = 1;
-  term.c_cc[VTIME] = 1;
+  //Setzt die maximale Anzahl Zeichen fuer das naechste Read
+  term.c_cc[VMIN] = 0;
+  //Setzt die maximale Wartezeit fuer das naechste Read
+  term.c_cc[VTIME] = 20;
   tcsetattr(fd, TCSANOW, &term);
   c = getchar();
   printf("\nDer Keycode lautet: %#x\n", c);
