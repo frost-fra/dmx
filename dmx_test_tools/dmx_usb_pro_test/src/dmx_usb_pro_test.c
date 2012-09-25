@@ -53,15 +53,6 @@ int main(int argc, char* argv[])
 	printf("Abbruch erfolgt nach einem Durchlauf der Schleife\n");
 
 	printf("Wert von ECHO: %#x\n", ECHO);
-	printf("Wert von ECHOE: %#x\n", ECHOE);
-	printf("Wert von ECHOK: %#x\n", ECHOK);
-	printf("Wert von ECHONL: %#x\n", ECHONL);
-	printf("Wert von ICANON: %#x\n", ICANON);
-	printf("Wert von IEXTEN: %#x\n", IEXTEN);
-	printf("Wert von ISIG: %#x\n", ISIG);
-	printf("Wert von NOFLSH: %#x\n", NOFLSH);
-	printf("Wert von TOSTOP: %#x\n", TOSTOP);
-	printf("Wert von XCASE: %#x\n", XCASE);
 	printf("Wert von ~ECHO: %#x\n", ~ECHO);
 
 	tcgetattr(pd, &term);
@@ -69,7 +60,6 @@ int main(int argc, char* argv[])
 
 	//Loechen des ECHO Flags im Terminal
 	term.c_lflag &= ~ECHO;
-	term.c_lflag = 0x8a33;
 	printf("Inhalt nach ECHO: %#x\n", term.c_lflag);
 	//printf("Inhalt nach Loeschen des ECHO Flags: %#x\n", term.c_lflag);
 	//term.c_lflag |= ECHO;
