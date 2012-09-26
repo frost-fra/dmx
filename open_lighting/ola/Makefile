@@ -28,7 +28,7 @@ define Package/ola
   SUBMENU:=DMX Programs
   TITLE:=Open Lighting Architecture Daemon
   URL:=http://code.google.com/p/linux-lighting/
-  DEPENDS:=+libartnet +libprotobuf +libmicrohttpd +libuuid +libstdcpp +cppunit
+  DEPENDS:=+libartnet +libmicrohttpd +libuuid +libstdcpp +protobuf +cppunit
 endef
 
 CONFIGURE_ARGS += --disable-root-check
