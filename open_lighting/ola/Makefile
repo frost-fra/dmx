@@ -23,8 +23,9 @@ PKG_BUILD_DEPENDS:=protobuf/host
 include $(INCLUDE_DIR)/package.mk
 
 define Package/ola
-  SECTION:=ola
-  CATEGORY:=Open Lighting Architecture
+  SECTION:=utils
+  CATEGORY:=Utilities
+  SUBMENU:=DMX Programs
   TITLE:=Open Lighting Architecture Daemon
   URL:=http://code.google.com/p/linux-lighting/
   DEPENDS:=+libartnet +libprotobuf +libmicrohttpd +libusb-1.0 +libuuid +libstdcpp +libpthread +librt
@@ -50,4 +51,4 @@ define Package/ola/install
 	$(INSTALL_BIN) ./files/olad.init $(1)/etc/init.d/olad
 endef
 
-$(eval $(call BuildPackage,ola))
+# $(eval $(call BuildPackage,ola))
