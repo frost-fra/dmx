@@ -15,7 +15,7 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://open-lighting.googlecode.com/files
 PKG_MD5SUM:=60f50f4622c065a341671e3133a14aaa
 
-PKG_FIXUP:=libtool
+PKG_FIXUP:=libtool-ucxx
 PKG_INSTALL:=1
 
 PKG_BUILD_DEPENDS:=protobuf/host
@@ -28,7 +28,7 @@ define Package/ola
   SUBMENU:=DMX Programs
   TITLE:=Open Lighting Architecture Daemon
   URL:=http://code.google.com/p/linux-lighting/
-  DEPENDS:=+libartnet +libprotobuf +libmicrohttpd +libusb-1.0 +libuuid +libstdcpp +libpthread +librt
+  DEPENDS:=+libartnet +libprotobuf +libmicrohttpd +libuuid +libstdcpp
 endef
 
 CONFIGURE_ARGS += --disable-root-check
