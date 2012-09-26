@@ -31,7 +31,10 @@ define Package/ola
   DEPENDS:=+libartnet +libmicrohttpd +libuuid +libstdcpp +protobuf +cppunit
 endef
 
-CONFIGURE_ARGS += --disable-root-check
+#STAGING_DIR Variable zeigt auf <openwrt_build_basis>/staging_dir/<ARCH>
+#z.B. /usr/src/openwrt/staging_dir/target-mips_r2_uClibc-0.9.33.2
+
+CONFIGURE_ARGS += --disable-root-check --with-cppunit-prefix=$(STAGING_DIR)/usr
 
 define Package/ola/description
   OLA (Open Lighting Architecture) is a framework that allows applications to 
