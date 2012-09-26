@@ -51,4 +51,4 @@ define Package/ola/install
 	$(INSTALL_BIN) ./files/olad.init $(1)/etc/init.d/olad
 endef
 
-# $(eval $(call BuildPackage,ola))
+$(eval $(call BuildPackage,ola))
