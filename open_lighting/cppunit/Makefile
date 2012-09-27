@@ -39,7 +39,20 @@ endef
 #<openwrt_build_basis>/build_dir/<ARCH>/<PKG_NAME>-<PKG_VERSION>/ipkg-install
 #e.g. /usr/src/openwrt/build_dir/target-mips_r2_uClibc-0.9.33.2/cppunit-1.12.1/ipkg-install
 
-#<2> Variable zeigt auf <openwrt_build_basis>/<ARCH>/staging_dir/<ARCH>/host
+#<2> Variable zeigt auf <openwrt_build_basis>/staging_dir/<ARCH>/host
+
+#Die Anwendung cppunit-config wird nicht crosscompiled und muss
+#daher in das Verzeichnis fuer die Anwendungen welche auf dem
+#Hostsystem ausgefuehrt werden, kopiert werden.
+#In diesem Fall ist dies das Verzeichnis
+#/usr/src/openwrt/staging_dir/target-mips_r2_uClibc-0.9.33.2/host/bin
+#Dieses wird vom Buildsystem auch in die PATH Variable mit eingebunden
+#damit sind die Anwendungen innerhalb des Verzeichnisses auch z.B.
+#fuer das ./configure Script sichtbar.
+#Beim Original cppunit Paket ist das ./configura Script der OLA
+#Anwendung immer mit dem Fehler, dass die cppunit Anwendung nicht
+#gefunden werden kann, abgebrochen. Dieses neue cppunit Paket
+#behebt dieses Problem.
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/cppunit
