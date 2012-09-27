@@ -34,6 +34,13 @@ define Build/Compile
 	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR="$(PKG_INSTALL_DIR)" install
 endef
 
+
+#<PKG_INSTALL_DIR> Variable zeigt auf 
+#<openwrt_build_basis>/build_dir/<ARCH>/<PKG_NAME>-<PKG_VERSION>/ipkg-install
+#e.g. /usr/src/openwrt/build_dir/target-mips_r2_uClibc-0.9.33.2/cppunit-1.12.1/ipkg-install
+
+#<2> Variable zeigt auf <openwrt_build_basis>/<ARCH>/staging_dir/<ARCH>/host
+
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/cppunit
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/cppunit $(1)/usr/include
