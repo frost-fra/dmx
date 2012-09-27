@@ -18,15 +18,15 @@ PKG_MD5SUM:=bd30e9cf5523cdfc019b94f5e1d7fd19
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
 
-define Package/cppunit
+define Package/cppunit_ola
   SECTION:=devel
   CATEGORY:=Development
-  TITLE:=Unit Testing Library for C++
+  TITLE:=Unit Testing Library for C++ (Makefile with OLA Patch)
   URL:=http://cppunit.sourceforge.net/
   DEPENDS:=+libstdcpp
 endef
 
-define Package/cppunit/description
+define Package/cppunit_ola/description
   Unit Testing Library for C++
 endef
 
@@ -50,9 +50,9 @@ define Build/InstallDev
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/cppunit-config $(2)/bin/
 endef
 
-define Package/cppunit/install
+define Package/cppunit_ola/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libcppunit*so* $(1)/usr/lib/
 endef
 
-$(eval $(call BuildPackage,cppunit))
+$(eval $(call BuildPackage,cppunit_ola))
