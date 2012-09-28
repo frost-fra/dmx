@@ -28,7 +28,7 @@ define Package/ola
   SUBMENU:=DMX Programs
   TITLE:=Open Lighting Architecture Daemon
   URL:=http://code.google.com/p/linux-lighting/
-  DEPENDS:=+libartnet +libmicrohttpd +libuuid +libstdcpp +protobuf +cppunit_ola
+  DEPENDS:=+libartnet +libmicrohttpd +libuuid +libstdcpp +libncurses +protobuf +cppunit_ola
 endef
 
 #STAGING_DIR Variable zeigt auf <openwrt_build_basis>/staging_dir/<ARCH>
