@@ -18,7 +18,7 @@ PKG_MD5SUM:=60f50f4622c065a341671e3133a14aaa
 PKG_FIXUP:=libtool-ucxx
 PKG_INSTALL:=1
 
-PKG_BUILD_DEPENDS:=protobuf/host
+PKG_BUILD_DEPENDS:=protobuf/host cppunit_ola
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -28,7 +28,7 @@ define Package/ola
   SUBMENU:=DMX Programs
   TITLE:=Open Lighting Architecture Daemon
   URL:=http://code.google.com/p/linux-lighting/
-  DEPENDS:=+libartnet +libmicrohttpd +libuuid +libstdcpp +libncurses +protobuf +cppunit_ola
+  DEPENDS:=+libartnet +libmicrohttpd +libuuid +libstdcpp +libncurses
 endef
 
 #STAGING_DIR Variable zeigt auf <openwrt_build_basis>/staging_dir/<ARCH>
